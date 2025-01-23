@@ -32,7 +32,6 @@ public class UserDaoImp implements UserDao {
     }
 
     @Override
-    @Transactional
     public User getUserWithCar(String model) {
         String hql = "FROM User u JOIN FETCH u.car c WHERE c.model = :model";
         Query<User> query = sessionFactory.getCurrentSession().createQuery(hql, User.class);
